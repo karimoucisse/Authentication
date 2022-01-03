@@ -2,11 +2,12 @@ const passport = require("passport")
 const passportLocal = require("passport-local")
 
 const localStrategy = passportLocal.Strategy
+
 const users = require("../users.json")
 
 
-passport.use(new localStrategy,( (username, password, done) => {
-    const user = users.find(user => user.username === username && user.password === password)
+passport.use(new localStrategy({ usernameField: 'email' }, (username, password, done) => {
+    const user = users.find(user => user.email === username && user.password === password)
 
     if(!user) {
         return done(null, false)
@@ -23,12 +24,6 @@ passport.deserializeUser((id, done) => {
     const user = users.find(user => user.id === id)
     done(null, user)
 })
-
-
-
-
-
-
 
 
 

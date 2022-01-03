@@ -3,7 +3,7 @@ const app = express()
 
 const passport = require("../config/passport")
 
-app.post('/login', passport.authenticate("locale"), (req, res) => {
+app.post('/login', passport.authenticate("local"), (req, res) => {
     if(req.user) {
         req.login(req.user, (err) => {
             if (err) {
