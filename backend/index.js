@@ -2,6 +2,7 @@ const express = require ("express")
 const app = express()
 const port = 5000
 const session = require("express-session")
+const authRoutes = require("./routes/auth")
 const passport = require("./config/passport")
 
 app.use(express.json())
@@ -16,6 +17,8 @@ app.use(session( {
 
 app.use(passport.initialize())
 app.use(passport.session())
+
+app.use('/auth', authRoutes)
 
 
 
