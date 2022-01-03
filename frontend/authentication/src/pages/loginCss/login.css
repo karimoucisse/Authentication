@@ -1,0 +1,64 @@
+body {
+  background-color: #c3f9ff;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  min-height: 100vh;
+  width: 100%;
+}
+
+body form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 350px;
+  height: 350px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 20px;
+  gap: 60px;
+  border: 1px solid;
+  border-radius: 10px;
+  -webkit-box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.3);
+          box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.3);
+}
+
+body form input {
+  width: 100%;
+  height: 25px;
+  outline: none;
+  padding-left: 15px;
+  border: none;
+}
+
+body form button {
+  background-color: transparent;
+  border: 2px solid #3244e9;
+  padding: 6px 15px;
+  cursor: pointer;
+  border-radius: 5px;
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+
+body form button:hover {
+  -webkit-transform: scale(1.04);
+          transform: scale(1.04);
+  background-color: #3244e9;
+  color: #fff;
+}
+/*# sourceMappingURL=login.css.map */
