@@ -4,7 +4,7 @@ const users = require("../users.json")
 const {verifyUser} = require("../middleware/auth")
 
 app.get("/", verifyUser, (req, res) => {
-    res.json(users)
+        res.json(users)
 })
 
 module.exports = app

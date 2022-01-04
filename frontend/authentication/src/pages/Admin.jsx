@@ -1,8 +1,12 @@
 import { useEffect, useState } from "react"
+
 const Admin = () => {
     const [user, setUser] = useState()
+
     useEffect(() => {
-        fetch('http://localhost:5000/auth/login')
+        fetch('http://localhost:5000/admin', {
+            credentials: 'include'
+        })
         .then(response => response.json())
         .then(data => setUser(data))
     }, [])
@@ -10,9 +14,17 @@ const Admin = () => {
     if(!user) {
         return <h1>nop</h1>
     }
+
     return (
         <div>
-            <h1>admin</h1>
+            {user.map((element) => {
+                return <div key={element.username}>
+                    <h2>{element.username}</h2>
+                    <h3>{element.email}</h3>
+                    <p>{element.age}</p>
+
+                </div>
+            })}
         </div>
     )
 }
